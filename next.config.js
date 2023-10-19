@@ -6,9 +6,9 @@ const nextConfig = {
     // domains: ['localhost', 'images.unsplash.com', 'staging.notionhive.com'],
     loader: 'default',
   },
-  experimental: {
-    serverActions: true,
-  },
+  // experimental: {
+  //   serverActions: true,
+  // },
   // async redirects() { 
   //   return [
   //     {
