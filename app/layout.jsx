@@ -8,6 +8,7 @@ import { fetchMenus } from '@/graphql/pages/GET_MENUS';
 import Loader from '@/components/loader';
 
 export const metadata = {
+  metadataBase: new URL('https://www.notionhive.com/'),
   title: {
     default: 'Notionhive Website',
     template: '%s | Notionhive Website',
