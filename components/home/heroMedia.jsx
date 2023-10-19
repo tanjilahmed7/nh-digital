@@ -25,7 +25,7 @@ const HeroMedia = ({ ...props }) => {
         <track
           kind='captions'
           src={props.captions}
-          srclang='en'
+          srcLang='en' // Corrected here
           label='English'
           default
         />
