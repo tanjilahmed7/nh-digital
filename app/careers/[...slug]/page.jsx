@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const { slugs } = await fetchCareesSlugs();
-  return slugs.map((slug) => slug);
+  return slugs.map((slug) => ({ slug: [slug] }));
 }
 
 export async function generateMetadata({ params: { slug } }) {
