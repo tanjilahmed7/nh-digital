@@ -33,7 +33,7 @@ const TestimonialSwiper = ({ items }) => {
                       height={40}
                     />
                     <div className='info'>
-                      <span>{item.name}</span>
+                      <span className='name'>{item.name}</span>
                       <p>{item.position}</p>
                     </div>
                   </div>
