@@ -1,0 +1,43 @@
+.work-together {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+
+  .content {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      margin-bottom: 0.625rem;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  .btn-primary {
+    &:hover {
+      color: $black;
+
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+
+  .btn-stacked {
+    border-color: $white;
+    color: $white;
+
+    &:hover {
+      border-color: $white;
+      color: $black;
+
+      &::before {
+        background-color: white;
+      }
+    }
+  }
+}

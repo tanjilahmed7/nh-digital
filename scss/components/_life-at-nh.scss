@@ -1,0 +1,65 @@
+.life-at-nh {
+  h4 {
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .section {
+    &-header {
+      margin-bottom: 60px;
+      text-align: center;
+      max-width: 730px;
+      margin-left: auto;
+      margin-right: auto;
+
+      &:first-of-type {
+        margin-bottom: 120px;
+
+        @media (max-width: 991.98px) {
+          margin-bottom: 100px;
+        }
+
+        @media (max-width: 768px) {
+          margin-bottom: 80px;
+        }
+
+        @media (max-width: 575.98px) {
+          margin-bottom: 60px;
+        }
+      }
+    }
+
+    &-img {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 8px;
+
+      img {
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  h2 {
+    color: $black;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    color: $black;
+    margin-bottom: 20px;
+    font-size: 32px;
+
+    @media (max-width: 991.98px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 575.98px) {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+
+  li {
+    a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $blue;
+      text-decoration: none;
+      border: 1px solid $blue;
+      transition: 300ms;
+      border-radius: 50rem;
+
+      svg {
+        path {
+          transition: 150ms;
+        }
+      }
+
+      &:hover {
+        background-color: $white;
+
+        svg {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+    }
+  }
+}

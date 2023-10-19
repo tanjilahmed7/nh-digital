@@ -1,0 +1,40 @@
+.contact-address {
+  .section-img {
+    border-radius: 8px;
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+  h2 {
+    color: $black;
+    margin-bottom: 30px;
+  }
+
+  &-item {
+    &:not(:last-of-type) {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba($black, 0.1);
+    }
+
+    h3,
+    p {
+      color: $black;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: $blue;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 300ms;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.tabs {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  &-v {
+    ul {
+      flex-direction: column;
+    }
+  }
+
+
+  &-btn {
+    font-size: 1.125rem;
+    padding: 0.625rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    background-color: $white;
+    color: $black;
+    border: 1px solid rgba($dark, 0.2);
+    border-radius: 0.25rem;
+    transition: 300ms;
+
+    &:hover,
+    &.active {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+  }
+}
+
+.tabpane {
+  display: none;
+
+  &.show {
+    display: block;
+    animation: fadeIn 450ms ease both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}

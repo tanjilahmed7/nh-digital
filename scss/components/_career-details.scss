@@ -1,0 +1,44 @@
+.career-details {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 28px;
+    color: $black;
+  }
+
+  ul,
+  ol {
+    color: $black;
+    margin-bottom: 40px;
+    display: grid;
+    gap: 16px;
+    font-size: 18px;
+
+    @media (max-width: 991.98px) {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    color: $black;
+    padding-bottom: 40px;
+    font-size: 18px;
+
+    @media (max-width: 991.98px) {
+      font-size: 16px;
+    }
+  }
+
+  .btn-primary {
+    &:hover {
+      color: $black;
+
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+}

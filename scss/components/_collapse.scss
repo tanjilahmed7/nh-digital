@@ -1,0 +1,28 @@
+[data-toggle="collapse"] {
+  cursor: pointer;
+
+  .icon {
+    transform: rotate(180deg);
+    transition: transform 300ms;
+  }
+
+  &:not(.collapsed) {
+    .icon {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.nh-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms;
+
+  & > div {
+    overflow: hidden;
+  }
+
+  &.show {
+    grid-template-rows: 1fr;
+  }
+}

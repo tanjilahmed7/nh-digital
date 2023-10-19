@@ -1,0 +1,153 @@
+.services {
+  background-color: $black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 767.98px) {
+    border-bottom: none;
+    overflow: hidden;
+  }
+
+  .left {
+    max-width: 350px;
+    position: sticky;
+    top: 0;
+
+    h2 {
+      color: $white;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 50px;
+      letter-spacing: -0.02em;
+      color: #f2f2f2;
+      margin-bottom: 20px;
+
+      @media (max-width: 767.98px) {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+    p {
+      color: $white;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 40px;
+    }
+    .magnetic {
+      @media (max-width: 767.98px) {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    &:hover {
+      color: $black;
+      border: 1px solid $blue;
+      svg {
+        path {
+          fill: $black;
+        }
+      }
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+
+  &-card {
+    background: #121212;
+    border-radius: 8px 0 0 8px;
+    box-sizing: border-box;
+    height: 355px;
+    .card-body {
+      padding: 40px;
+      position: relative;
+
+      @media (max-width: 767.99px) {
+        padding: 30px;
+      }
+
+      h3 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 34px;
+        letter-spacing: -0.02em;
+        color: #f2f2f2;
+        margin-bottom: 20px;
+        &::after {
+          content: '';
+          display: block;
+          width: 40px;
+          height: 1px;
+          background: $blue;
+          margin-top: 20px;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .card-footer {
+      padding: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: 300ms;
+      background: transparent;
+      // transition transform animation background-color
+      a {
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: 300ms;
+
+        &:hover {
+          gap: 1rem;
+        }
+      }
+    }
+    &:hover {
+      // card footer backgroud width 100% and caluclate the width of the card background color white
+      .card-footer {
+        padding: 0;
+        transition: background 0.3s ease-in-out;
+        background: $blue;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.style--2 {
+    .row > .col-md-6 {
+      &:nth-last-of-type(2) {
+        transform: translateY(-50px);
+        transition: transform 0.5s ease-in-out;
+
+        @media (max-width: 767.98px) {
+          transform: none;
+        }
+      }
+
+      &:nth-last-of-type(3) {
+        padding-top: 50px;
+        transition: transform 0.5s ease-in-out;
+
+        @media (max-width: 767.98px) {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

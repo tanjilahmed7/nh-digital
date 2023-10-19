@@ -1,0 +1,68 @@
+.accordion {
+  --bs-accordion-btn-icon: #{url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg>')};
+  --bs-accordion-btn-active-icon: #{url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231158E5" className="bi bi-dash-lg" viewBox="0 0 16 16"><path fillRule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/></svg>')};
+  --bs-accordion-btn-icon-width: 1.5rem;
+  --bs-accordion-btn-icon-height: 1.5rem;
+
+  &-item {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  &-header {
+    margin-bottom: 0;
+  }
+
+  &-body {
+    padding: 0;
+    overflow: hidden;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &-content {
+    padding-bottom: 30px;
+  }
+
+  &-collapse {
+    border-bottom: 1px solid rgba($black, 0.1);
+    display: grid;
+    grid-template-rows: 0fr;
+    border-radius: 0 !important;
+    transition: grid-template-rows 300ms;
+
+    &.show {
+      border-color: $blue;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &-button {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $black;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 30px 0;
+    background-color: transparent;
+
+    @media (max-width: 767.98px) {
+      font-size: 1.25rem;
+    }
+
+    &:not(.collapsed) {
+      border-radius: 0;
+      background-color: transparent;
+      color: $blue;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

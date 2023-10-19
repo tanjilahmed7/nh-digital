@@ -1,0 +1,70 @@
+.industry-experiences {
+  background-color: #f0f6ff;
+
+  .section-header {
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-item {
+    padding: 40px 30px;
+    background-color: $white;
+    border-radius: 0.5rem;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $blue;
+      height: 2px;
+      width: 80%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h4 {
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: rgba($black, 0.8);
+      margin-bottom: 0;
+    }
+  }
+
+  .swiper {
+    &-button-prev,
+    &-button-next {
+      position: absolute;
+      top: 50%;
+    }
+
+    &-button-prev {
+      left: 0;
+      transform: translate(-125%, -50%);
+
+      @media (max-width: 1199.98px) {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-button-next {
+      right: 0;
+
+      transform: translate(125%, -50%);
+
+      @media (max-width: 1199.98px) {
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+}

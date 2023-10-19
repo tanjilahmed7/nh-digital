@@ -1,0 +1,20 @@
+.project-in-mind {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    &::before {
+      background-color: $white;
+    }
+
+    &:hover {
+      color: $black;
+      border-color: $blue;
+    }
+  }
+}

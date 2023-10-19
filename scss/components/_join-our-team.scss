@@ -1,0 +1,34 @@
+.join-our-team {
+  background-color: #f0f6ff;
+
+  &-img {
+    max-width: 310px;
+    border-radius: 8px;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    &:hover {
+      color: $black;
+
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+}

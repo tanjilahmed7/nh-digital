@@ -1,0 +1,216 @@
+header {
+  background-color: $black;
+  padding-block: 28px;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  background-color: $black;
+  transition:
+    background-color 300ms,
+    padding 300ms;
+
+  &.sticky {
+    padding-block: 0.5rem;
+    background-color: rgba($white, 0.8);
+    box-shadow: 0 0.25rem 0.625rem 0 rgba($black, 0.06);
+    backdrop-filter: blur(8px);
+
+    .logo {
+      filter: invert(100%);
+    }
+
+    ul li a {
+      color: $black;
+
+      &:hover {
+        color: $black;
+        &::after {
+          width: 100%;
+          background-color: $black;
+        }
+      }
+    }
+
+    .menu-toggler {
+      span {
+        background-color: $black;
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding-block: 24px;
+  }
+
+  .logo,
+  .menu-toggler {
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 0.25rem;
+  }
+
+  .menu-toggler {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 28px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+      background-color: #d9d9d9;
+      width: 28px;
+      height: 2px;
+      transition: 300ms;
+    }
+
+    &.active {
+      span {
+        &:nth-of-type(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  &-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        display: inline-flex;
+        padding: 10px 25px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        position: relative;
+
+        @media (max-width: 1199.98px) {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        @media (max-width: 991.98px) {
+          font-size: 24px;
+          padding-left: 0;
+          padding-right: 0;
+          font-weight: 400;
+        }
+
+        &.active,
+        &:hover {
+          color: $white;
+          &::after {
+            width: 100%;
+          }
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $white;
+          transition: width 0.3s ease;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &-main {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1039;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(#000000, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 150px 16px 60px;
+    transition: 300ms;
+    display: none;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &::before {
+        content: 'Menu';
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: rgba($white, 0.5);
+        display: block;
+        margin-bottom: 30px;
+        padding-inline: 1rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      display: block;
+    }
+
+    &:not(.show) {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    .magnetic {
+      width: 288px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    ul {
+      @media (max-width: 991.98px) {
+        display: grid;
+        gap: 1rem;
+        padding-inline: 1rem;
+        overflow-y: auto;
+      }
+    }
+  }
+}
