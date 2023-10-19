@@ -4,8 +4,8 @@ import { useState } from 'react';
 import ModalVideo from 'react-modal-video';
 
 const HeroMedia = ({ ...props }) => {
-	const [isOpen, setIsOpen] = useState(false);
-	return (
+  const [isOpen, setIsOpen] = useState(false);
+  return (
     <div className='hero__img text-end'>
       <ModalVideo
         youtube={{ mute: 0, autoplay: 0 }}
@@ -21,7 +21,16 @@ const HeroMedia = ({ ...props }) => {
         playsInline
         muted
         loop
-      ></video>
+      >
+        <track
+          kind='captions'
+          src={props.captions}
+          srclang='en'
+          label='English'
+          default
+        />
+      </video>
+
       <div className='video-button'>
         <button
           type='button'
