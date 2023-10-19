@@ -133,7 +133,7 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
                           <Link href='http://linkedin.com/company/notionhive'>
                             <Image
                               src='/images/linkedin.svg'
-                              alt=''
+                              alt='Follow us on LinkedIn'
                               width='14'
                               height='14'
                             />
@@ -143,7 +143,7 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
                           <Link href='https://www.youtube.com/channel/UCfhCjkQh9kgfl3SvcUTEYfQ/featured'>
                             <Image
                               src='/images/youtube.svg'
-                              alt=''
+                              alt='Visit our YouTube channel'
                               width='14'
                               height='14'
                             />
@@ -153,7 +153,7 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
                           <Link href='https://www.facebook.com/notionhive'>
                             <Image
                               src='/images/facebook.svg'
-                              alt=''
+                              alt='Like us on Facebook'
                               width='14'
                               height='14'
                             />
@@ -163,7 +163,7 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
                           <Link href='https://www.instagram.com/hellonotionhive/'>
                             <Image
                               src='/images/instagram.svg'
-                              alt=''
+                              alt='Follow us on Instagram'
                               width='14'
                               height='14'
                             />
