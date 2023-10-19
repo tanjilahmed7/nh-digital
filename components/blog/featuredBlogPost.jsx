@@ -7,6 +7,16 @@ const FeaturedBlogPost = async ({ data }) => {
   const id = parseInt(data?.post);
 
   const { post } = (await getPost(id)) || {};
+
+  if (
+    !post ||
+    !post.slug ||
+    !post.featuredImage ||
+    !post.title ||
+    !post.excerpt
+  ) {
+    return null; // Do not render if important data is missing
+  }
   return (
     <section className='featured-blog'>
       <div className='container'>
