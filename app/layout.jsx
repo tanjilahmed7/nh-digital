@@ -10,8 +10,8 @@ import Loader from '@/components/loader';
 export const metadata = {
   metadataBase: new URL('https://www.notionhive.com/'),
   title: {
-    default: 'Notionhive Website',
-    template: '%s | Notionhive Website',
+    default: 'Notionhive Digital',
+    template: '%s | Notionhive Digital',
   },
   icons: {
     favicon: '/images/favicon.png',
