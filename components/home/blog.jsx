@@ -4,10 +4,10 @@ import React from 'react';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
 const Blog = ({ blog }) => {
-	const { uri, title, featuredImage, categories } = blog || {};
-	const image = featuredImage?.node?.sourceUrl;
-	const tags = categories?.edges?.map((edge) => edge.node.name);
-	return (
+  const { uri, slug, title, featuredImage, categories } = blog || {};
+  const image = featuredImage?.node?.sourceUrl;
+  const tags = categories?.edges?.map((edge) => edge.node.name);
+  return (
     <div className='blog_item'>
       {image && (
         <div className='blog_img'>
@@ -27,7 +27,7 @@ const Blog = ({ blog }) => {
             arr.length !== index ? `${tag},` : tag
           )}
         </span>
-        <Link href='/blog'>{title}</Link>
+        <Link href={`blog/${slug}`}>{title}</Link>
       </div>
     </div>
   );

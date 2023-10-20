@@ -14,7 +14,7 @@ const Blogs = async () => {
       <BlogContent title='Blogs' blogs={nodes} />
       <div className='text-center' data-aos='fade-up' data-aos-delay='400'>
         <MagneticButton>
-          <Link href='#' className='btn btn-stacked button--wayra'>
+          <Link href='/blog' className='btn btn-stacked button--wayra'>
             Read more on our blog
           </Link>
         </MagneticButton>
