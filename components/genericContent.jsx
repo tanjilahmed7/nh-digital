@@ -12,13 +12,13 @@ const GenericContent = ({ content, applyLink }) => {
               <>
                 <hr />
                 <MagneticButton>
-                  <a
+                  <Link
                     target='__blank'
                     href={applyLink}
                     className='btn btn-primary button--wayra'
                   >
                     Apply now
-                  </a>
+                  </Link>
                 </MagneticButton>
               </>
             )}

@@ -1,63 +1,68 @@
-import React, { lazy } from 'react';
+import dynamic from 'next/dynamic';
 
-const HeroHome = lazy(() => import('@/components/home/hero'));
-const CaseStudies = lazy(() => import('@/components/home/caseStudies'));
-const Brands = lazy(() => import('@/components/home/brands'));
-const Services = lazy(() => import('@/components/services'));
-const ServicesAlt = lazy(() => import('@/components/servicesAlt'));
-const Testimonials = lazy(() => import('@/components/testimonials'));
-const Strategy = lazy(() => import('@/components/strategy'));
-const Blogs = lazy(() => import('@/components/home/blogs'));
-const GrowBusiness = lazy(() => import('@/components/growBusiness'));
-const Hero = lazy(() => import('@/components/global/hero'));
-const GreatAttention = lazy(() =>
+const HeroHome = dynamic(() => import('@/components/home/hero'));
+const CaseStudies = dynamic(() => import('@/components/home/caseStudies'));
+const Brands = dynamic(() => import('@/components/home/brands'));
+const Services = dynamic(() => import('@/components/services'));
+const ServicesAlt = dynamic(() => import('@/components/servicesAlt'));
+const Testimonials = dynamic(() => import('@/components/testimonials'));
+const Strategy = dynamic(() => import('@/components/strategy'));
+const Blogs = dynamic(() => import('@/components/home/blogs'));
+const GrowBusiness = dynamic(() => import('@/components/growBusiness'));
+const Hero = dynamic(() => import('@/components/global/hero'));
+const GreatAttention = dynamic(() =>
   import('@/components/services/greatAttention')
 );
-const BookConsultation = lazy(() =>
+const BookConsultation = dynamic(() =>
   import('@/components/services/bookConsultation')
 );
-const AboutUsStrategy = lazy(() => import('@/components/aboutUs/strategy'));
-const OurStory = lazy(() => import('@/components/aboutUs/ourStory'));
-const Awards = lazy(() => import('@/components/aboutUs/awards'));
-const AboutBrands = lazy(() => import('@/components/aboutUs/brands'));
-const Clients = lazy(() => import('@/components/aboutUs/clients'));
-const Leadership = lazy(() => import('@/components/aboutUs/leadership'));
-const JoinUs = lazy(() => import('@/components/aboutUs/joinUs'));
-const CaseStudiesHero = lazy(() => import('@/components/caseStudies/hero'));
-const AllCaseStudies = lazy(() =>
+const AboutUsStrategy = dynamic(() => import('@/components/aboutUs/strategy'));
+const OurStory = dynamic(() => import('@/components/aboutUs/ourStory'));
+const Awards = dynamic(() => import('@/components/aboutUs/awards'));
+const AboutBrands = dynamic(() => import('@/components/aboutUs/brands'));
+const Clients = dynamic(() => import('@/components/aboutUs/clients'));
+const Leadership = dynamic(() => import('@/components/aboutUs/leadership'));
+const JoinUs = dynamic(() => import('@/components/aboutUs/joinUs'));
+const CaseStudiesHero = dynamic(() => import('@/components/caseStudies/hero'));
+const AllCaseStudies = dynamic(() =>
   import('@/components/caseStudies/caseStudies')
 );
-const WorkTogether = lazy(() => import('@/components/workTogether'));
-const CaseSummary = lazy(() => import('@/components/caseStudies/caseSummary'));
-const CaseDetails = lazy(() => import('@/components/caseStudies/caseDetails'));
-const ServicesItems = lazy(() => import('@/components/servicesAlt'));
-const IncludedServices = lazy(() =>
+const WorkTogether = dynamic(() => import('@/components/workTogether'));
+const CaseSummary = dynamic(() =>
+  import('@/components/caseStudies/caseSummary')
+);
+const CaseDetails = dynamic(() =>
+  import('@/components/caseStudies/caseDetails')
+);
+const ServicesItems = dynamic(() => import('@/components/servicesAlt'));
+const IncludedServices = dynamic(() =>
   import('@/components/services/includedServices')
 );
-const IndustryExperience = lazy(() =>
+const IndustryExperience = dynamic(() =>
   import('@/components/services/industryExperience')
 );
-const OurProcess = lazy(() => import('@/components/services/ourProcess'));
-const FAQ = lazy(() => import('@/components/services/faq'));
-const CaseStudiesSlider = lazy(() => import('@/components/caseStudies'));
-const EffectiveSpeech = lazy(() =>
+const OurProcess = dynamic(() => import('@/components/services/ourProcess'));
+const FAQ = dynamic(() => import('@/components/services/faq'));
+const CaseStudiesSlider = dynamic(() => import('@/components/caseStudies'));
+const EffectiveSpeech = dynamic(() =>
   import('@/components/careers/effectiveSpeech')
 );
-const AllCaseStudiesSlider = lazy(() => import('@/components/caseStudies'));
-const LifeAtNH = lazy(() => import('@/components/careers/lifeAtNH'));
-const CareersStrategy = lazy(() => import('@/components/careers/strategy'));
-const Benefits = lazy(() => import('@/components/careers/benefits'));
-const Jobs = lazy(() => import('@/components/careers/jobs'));
-const FeaturedBlogPost = lazy(() =>
+const AllCaseStudiesSlider = dynamic(() => import('@/components/caseStudies'));
+const LifeAtNH = dynamic(() => import('@/components/careers/lifeAtNH'));
+const CareersStrategy = dynamic(() => import('@/components/careers/strategy'));
+const Benefits = dynamic(() => import('@/components/careers/benefits'));
+const Jobs = dynamic(() => import('@/components/careers/jobs'));
+const FeaturedBlogPost = dynamic(() =>
   import('@/components/blog/featuredBlogPost')
 );
-const Posts = lazy(() => import('@/components/blog/posts'));
-const ProjectDiscussion = lazy(() => import('@/components/projectDiscussion'));
-const ContactForm = lazy(() => import('@/components/contactUs/contactForm'));
-const OfficeAddress = lazy(() =>
+const Posts = dynamic(() => import('@/components/blog/posts'));
+const ProjectDiscussion = dynamic(() =>
+  import('@/components/projectDiscussion')
+);
+const ContactForm = dynamic(() => import('@/components/contactUs/contactForm'));
+const OfficeAddress = dynamic(() =>
   import('@/components/contactUs/officeAddress')
 );
-
 
 const componentMap = {
   'carbon-fields/hero': HeroHome,

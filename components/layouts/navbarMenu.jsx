@@ -1,9 +1,12 @@
 'use client';
 
+import { useMenu } from '@/context/menuContext';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NavbarMenu = ({ navLinks = [] }) => {
+  const { closeMenu } = useMenu();
+
   const {
     menu: { menuItems: { nodes: menuItems } = {} },
   } = navLinks || {};
@@ -17,6 +20,7 @@ const NavbarMenu = ({ navLinks = [] }) => {
           <Link
             href={navLink.url}
             className={pathname === navLink.url ? 'active' : ''}
+            onClick={closeMenu}
           >
             {navLink.label}
           </Link>

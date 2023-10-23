@@ -9,24 +9,24 @@ import 'swiper/scss';
 import MagneticButton from '../magneticButton';
 
 const StorySlider = ({ stories = [] }) => {
-	const [swiper, setSwiper] = useState(null);
-	const swiperRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  const swiperRef = useRef(null);
 
-	const handleNavigate = (event) => {
-		const slideIndex = event.target
-			.closest('.swiper-slide')
-			.getAttribute('data-swiper-slide-index');
+  const handleNavigate = (event) => {
+    const slideIndex = event.target
+      .closest('.swiper-slide')
+      .getAttribute('data-swiper-slide-index');
 
-		swiper.slideToLoop(parseInt(slideIndex), 300);
-	};
+    swiper.slideToLoop(parseInt(slideIndex), 300);
+  };
 
-	useEffect(() => {
-		if (swiperRef.current) {
-			setSwiper(swiperRef.current.swiper);
-		}
-	}, []);
+  useEffect(() => {
+    if (swiperRef.current) {
+      setSwiper(swiperRef.current.swiper);
+    }
+  }, []);
 
-	return (
+  return (
     <div className='swiper-container'>
       <Swiper
         ref={swiperRef}
@@ -55,6 +55,7 @@ const StorySlider = ({ stories = [] }) => {
             spaceBetween: 30,
           },
         }}
+        watchOverflow={true}
         data-aos='fade-left'
         data-aos-duration='800'
       >

@@ -25,6 +25,7 @@ const OurProcess = ({ data }) => {
         </div>
         <div className='swiper-container'>
           <Swiper
+            watchOverflow={true}
             ref={swiperRef}
             loop={true}
             breakpoints={{
@@ -50,7 +51,7 @@ const OurProcess = ({ data }) => {
               },
             }}
             data-aos='fade-left'
-            data-aos-delay='300'
+            data-aos-duration='300'
           >
             {items &&
               items.map((item, index) => (

@@ -11,6 +11,13 @@ const GET_SERVICES_POST_ID = gql`
         name
         attributesJSON
       }
+      seo {
+        canonical
+        cornerstone
+        metaDesc
+        metaKeywords
+        title
+      }
     }
   }
   ${ServiceDetails}

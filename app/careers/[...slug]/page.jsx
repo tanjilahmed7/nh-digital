@@ -24,7 +24,7 @@ export async function generateMetadata({ params: { slug } }) {
 const CareerPage = async ({ params }) => {
   const { data, loading, error } =
     (await getCareerBySlug(params?.slug[0])) || {};
-  const heroData = { title: data.title };
+  const heroData = { pagetitle: data.title, title: data.title };
 
   return (
     <main>

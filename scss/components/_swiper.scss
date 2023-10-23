@@ -4,6 +4,10 @@
     z-index: 0;
   }
 
+  &-slide {
+    cursor: grabbing;
+  }
+
   &-button-prev,
   &-button-next {
     width: 40px;
@@ -19,6 +23,7 @@
     transform: none;
     margin: 0;
     z-index: 1;
+    user-select: none;
 
     &::after,
     &::before {

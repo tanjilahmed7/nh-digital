@@ -20,8 +20,6 @@ const SectionMain = ({ initialPosts, catetories }) => {
   const [hasNextPage, setHasNextPage] = useState(true);
 
   useEffect(() => {
-    console.log('render');
-    // reset posts
     setAfter(posts.pageInfo.endCursor);
     setHasNextPage(posts.pageInfo.hasNextPage);
   }, [posts]);

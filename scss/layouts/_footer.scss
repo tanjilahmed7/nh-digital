@@ -14,7 +14,7 @@ footer {
   #mc_embed_signup {
     margin-bottom: 40px;
 
-    input:not([type="checkbox"], [type="radio"]) {
+    input:not([type='checkbox'], [type='radio']) {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 40px;
@@ -180,5 +180,11 @@ footer {
         }
       }
     }
+  }
+}
+
+.footer-widget-menu {
+  @media (min-width: 768px) {
+    grid-template-rows: 1fr !important;
   }
 }

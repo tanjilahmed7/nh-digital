@@ -1,5 +1,10 @@
 .btn {
   padding: 1rem 3rem;
+  min-width: 10rem;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .btn-primary {
@@ -112,12 +117,16 @@
 
 /* Ujarak */
 .button--ujarak {
-  -webkit-transition: border-color 0.4s, color 0.4s;
-  transition: border-color 0.4s, color 0.4s;
+  -webkit-transition:
+    border-color 0.4s,
+    color 0.4s;
+  transition:
+    border-color 0.4s,
+    color 0.4s;
 }
 
 .button--ujarak::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -128,8 +137,12 @@
   opacity: 0;
   -webkit-transform: scale3d(0.7, 1, 1);
   transform: scale3d(0.7, 1, 1);
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-  transition: transform 0.4s, opacity 0.4s;
+  -webkit-transition:
+    -webkit-transform 0.4s,
+    opacity 0.4s;
+  transition:
+    transform 0.4s,
+    opacity 0.4s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
@@ -165,14 +178,18 @@
 /* Wayra */
 .button--wayra {
   overflow: hidden;
-  -webkit-transition: border-color 0.3s, color 0.3s;
-  transition: border-color 0.3s, color 0.3s;
+  -webkit-transition:
+    border-color 0.3s,
+    color 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .button--wayra::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -183,9 +200,14 @@
   transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
   -webkit-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s,
+  -webkit-transition:
+    -webkit-transform 0.3s,
+    opacity 0.3s,
     background-color 0.3s;
-  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s,
+    background-color 0.3s;
 }
 
 .button--wayra:hover {

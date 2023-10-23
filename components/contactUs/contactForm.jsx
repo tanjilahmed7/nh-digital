@@ -23,7 +23,7 @@ const ContactUs = ({ data }) => {
     return null;
   }
   return (
-    <section className='contact-form section'>
+    <section className='contact-section section'>
       <div className='container'>
         <div className='section-header'>
           <Breadcrumbs breadcrumbs={breadcrumbs} />

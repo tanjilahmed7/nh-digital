@@ -4,7 +4,7 @@ const Calendly = () => {
   return (
     <div className='text-center'>
       <Image
-        src='/images/book-consultation/calendly.png'
+        src='https://digital.notionhive.com/images/book-consultation/calendly.png'
         alt='Consultation'
         className='img-fluid'
         width={635}

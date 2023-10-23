@@ -2,14 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'staging.notionhive.com'],
+    domains: [
+      'localhost',
+      'staging.notionhive.com',
+      'digital.notionhive.com',
+    ],
     // domains: ['localhost', 'images.unsplash.com', 'staging.notionhive.com'],
     loader: 'default',
   },
   // experimental: {
   //   serverActions: true,
   // },
-  // async redirects() { 
+  // async redirects() {
   //   return [
   //     {
   //       source: '/about-us',

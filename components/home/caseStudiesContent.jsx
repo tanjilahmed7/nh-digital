@@ -5,13 +5,19 @@ import CaseStudyItem from '../caseStudyItem';
 import useSwiperSlider from '../../hooks/useSwiperSlider';
 
 import 'swiper/scss';
+import MagneticButton from '../magneticButton';
+import Link from 'next/link';
 
 const CaseStudiesContent = ({ title, caseStudies }) => {
   const [swiperRef, swiper] = useSwiperSlider();
   return (
     <>
       <div className='container'>
-        <div className='section_header'>
+        <div
+          className='section_header'
+          data-aos='fade-left'
+          data-aos-duration='800'
+        >
           <div className='section_title'>
             <h2>{title}</h2>
           </div>
@@ -56,6 +62,7 @@ const CaseStudiesContent = ({ title, caseStudies }) => {
         </div>
       </div>
       <Swiper
+        watchOverflow={true}
         ref={swiperRef}
         slidesPerView={'auto'}
         spaceBetween={30}

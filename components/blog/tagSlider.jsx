@@ -65,6 +65,7 @@ const TagSlider = ({ tags = [], excludeIds, initialPosts }) => {
     <>
       <div className='swiper-container'>
         <Swiper
+          watchOverflow={true}
           ref={swiperRef}
           loop={true}
           slidesPerView={'auto'}

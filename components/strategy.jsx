@@ -12,7 +12,7 @@ const Strategy = ({ data }) => {
         <div className='stragegy-item'>
           <div className='row'>
             <div className='col-md-8 offset-md-2'>
-              <h2 data-aos='fade-up' data-aos-duration='200'>
+              <h2 data-aos='fade-up' data-aos-duration='800'>
                 {title}
               </h2>
               {count_items && (
@@ -22,7 +22,7 @@ const Strategy = ({ data }) => {
                       key={counter._id}
                       className='col-md-4'
                       data-aos='fade-up'
-                      data-aos-duration='200'
+                      data-aos-duration='800'
                     >
                       <Counter
                         count={counter.number}
@@ -36,10 +36,10 @@ const Strategy = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className='text-center' data-aos='fade-up' data-aos-duration='500'>
+        <div className='text-center' data-aos='fade-up' data-aos-duration='600'>
           <MagneticButton>
             <Link href='/about-us' className='btn btn-stacked button--wayra'>
-              About us
+              Know the team
             </Link>
           </MagneticButton>
         </div>

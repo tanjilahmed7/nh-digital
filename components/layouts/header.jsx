@@ -1,26 +1,18 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import MagneticButton from '../magneticButton';
 import StickyHeader from './stickyHeader';
 import NavbarMenu from './navbarMenu';
+import MagneticButton from '../magneticButton';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useMenu } from '@/context/menuContext';
 
 const Header = ({ navLinks }) => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  useEffect(() => {
-    if (toggleMenu) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [toggleMenu]);
+  const { isMenuOpen, toggleMenu } = useMenu();
 
   return (
     <>
-      <StickyHeader setToggleMenu={() => setToggleMenu(false)}>
+      <StickyHeader>
         <nav className='navbar-main'>
           <div className='container'>
             <Link href='/' className='logo'>
@@ -51,8 +43,8 @@ const Header = ({ navLinks }) => {
             </MagneticButton>
             <button
               type='button'
-              className={`menu-toggler d-lg-none ${toggleMenu ? 'active' : ''}`}
-              onClick={() => setToggleMenu(!toggleMenu)}
+              className={`menu-toggler d-lg-none ${isMenuOpen ? 'active' : ''}`}
+              onClick={toggleMenu}
             >
               <span></span>
               <span></span>
@@ -61,7 +53,7 @@ const Header = ({ navLinks }) => {
           </div>
         </nav>
       </StickyHeader>
-      <nav className={`navbar-mobile ${toggleMenu ? 'show' : ''}`}>
+      <nav className={`navbar-mobile ${isMenuOpen ? 'show' : ''}`}>
         <div className='container'>
           <NavbarMenu navLinks={navLinks} />
           <MagneticButton className='d-lg-none'>

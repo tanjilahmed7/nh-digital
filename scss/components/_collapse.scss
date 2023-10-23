@@ -1,14 +1,17 @@
-[data-toggle="collapse"] {
+.collapse-trigger {
   cursor: pointer;
 
-  .icon {
-    transform: rotate(180deg);
-    transition: transform 300ms;
+  .icon-down {
+    svg {
+      transition: transform 300ms;
+    }
   }
 
-  &:not(.collapsed) {
-    .icon {
-      transform: rotate(0deg);
+  &.active {
+    .icon-down {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 }

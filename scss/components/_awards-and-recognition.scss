@@ -3,10 +3,6 @@
   color: $white;
   position: relative;
 
-  @media (min-width: 992px) {
-    overflow: unset;
-  }
-
   h2 {
     margin-bottom: 30px;
   }

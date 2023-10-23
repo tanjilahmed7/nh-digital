@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterNewsletter from '../footerNewsletter';
 import MenuLink from '../MenuLink';
+import Collapse from '../global/collapse';
 
 const Footer = ({ servicesMenus, QuickLinksMenus }) => {
   return (
@@ -10,97 +11,93 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
         <div className='container'>
           <div className='row gy-5 gy-xl-0 gx-3 justify-content-between'>
             <div className='col-xl-3'>
-              <h3 className='title'>Stay connected</h3>
-              <FooterNewsletter />
+              {/* <FooterNewsletter /> */}
               <h4 className='sub-title'>Awards & Recognition</h4>
               <div className='awards'>
                 <Image
-                  src='/images/award01.png'
+                  src='https://digital.notionhive.com/images/award01.png'
                   alt='title'
                   width={46}
                   height={50}
                 />
                 <Image
-                  src='/images/award02.png'
+                  src='https://digital.notionhive.com/images/award02.png'
                   alt=''
                   width={46}
                   height={50}
                 />
               </div>
             </div>
-            <div className='col-xl-8'>
+            <div className='col-xl-9'>
               <div className='row gy-5 gy-md-0 gx-md-3'>
                 <div className='col-md-4'>
                   <div className='footer-item'>
-                    <div
-                      className='d-flex align-items-center footer-widget'
-                      data-toggle='collapse'
-                      data-target='#collapseFooterMenu1'
-                      role='button'
-                      aria-expanded='false'
-                      aria-controls='collapseFooterMenu1'
+                    <Collapse
+                      tiggerClassName='d-flex align-items-center footer-widget'
+                      bodyClassName='footer-widget-menu'
                     >
-                      <div className='col-6'>
-                        <h3 className='title'>Service</h3>
-                      </div>
-                      <div className='col-6 block d-md-none'>
-                        <div className='icon-down text-end'>
-                          <svg
-                            width='16'
-                            height='10'
-                            viewBox='0 0 16 10'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M15.5 1.53125L8 9.5L0.5 1.5785L1.5545 0.499999L8 7.3205L14.4215 0.5L15.5 1.53125Z'
-                              fill='white'
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    <MenuLink
-                      id='collapseFooterMenu1'
-                      navLinks={servicesMenus}
-                    />
+                      {{
+                        trigger: (
+                          <>
+                            <div className='col-6'>
+                              <h3 className='title'>Service</h3>
+                            </div>
+                            <div className='col-6 block d-md-none'>
+                              <div className='icon-down text-end'>
+                                <svg
+                                  width='16'
+                                  height='10'
+                                  viewBox='0 0 16 10'
+                                  fill='none'
+                                  xmlns='http://www.w3.org/2000/svg'
+                                >
+                                  <path
+                                    d='M15.5 1.53125L8 9.5L0.5 1.5785L1.5545 0.499999L8 7.3205L14.4215 0.5L15.5 1.53125Z'
+                                    fill='white'
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </>
+                        ),
+                        body: <MenuLink navLinks={servicesMenus} />,
+                      }}
+                    </Collapse>
                   </div>
                 </div>
                 <div className='col-md-4'>
                   <div className='footer-item'>
-                    <div
-                      className='d-flex align-items-center footer-widget'
-                      data-toggle='collapse'
-                      data-target='#collapseFooterMenu2'
-                      role='button'
-                      aria-expanded='false'
-                      aria-controls='collapseFooterMenu2'
+                    <Collapse
+                      tiggerClassName='d-flex align-items-center footer-widget'
+                      bodyClassName='footer-widget-menu'
                     >
-                      <div className='col-6'>
-                        <h3 className='title'>Quick links</h3>
-                      </div>
-                      <div className='col-6 block d-md-none'>
-                        <div className='icon-down text-end'>
-                          <svg
-                            width='16'
-                            height='10'
-                            viewBox='0 0 16 10'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M15.5 1.53125L8 9.5L0.5 1.5785L1.5545 0.499999L8 7.3205L14.4215 0.5L15.5 1.53125Z'
-                              fill='white'
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <MenuLink
-                      id='collapseFooterMenu2'
-                      navLinks={QuickLinksMenus}
-                    />
+                      {{
+                        trigger: (
+                          <>
+                            <div className='col-6'>
+                              <h3 className='title'>Quick links</h3>
+                            </div>
+                            <div className='col-6 block d-md-none'>
+                              <div className='icon-down text-end'>
+                                <svg
+                                  width='16'
+                                  height='10'
+                                  viewBox='0 0 16 10'
+                                  fill='none'
+                                  xmlns='http://www.w3.org/2000/svg'
+                                >
+                                  <path
+                                    d='M15.5 1.53125L8 9.5L0.5 1.5785L1.5545 0.499999L8 7.3205L14.4215 0.5L15.5 1.53125Z'
+                                    fill='white'
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </>
+                        ),
+                        body: <MenuLink navLinks={QuickLinksMenus} />,
+                      }}
+                    </Collapse>
                   </div>
                 </div>
                 <div className='col-md-4'>

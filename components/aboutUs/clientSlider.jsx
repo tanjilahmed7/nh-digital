@@ -9,7 +9,7 @@ const ClientSlider = ({ clients = [] }) => {
   return (
     <Swiper
       modules={[Autoplay]}
-      speed={2000}
+      speed={5000}
       autoplay={{
         delay: 0,
         disableOnInteraction: false,
@@ -18,6 +18,9 @@ const ClientSlider = ({ clients = [] }) => {
       loop={true}
       slidesPerView={'auto'}
       spaceBetween={50}
+      data-aos='fade-left'
+      data-aos-duration='800'
+      watchOverflow={true}
     >
       {clients.map((client) => (
         <SwiperSlide key={client._id}>

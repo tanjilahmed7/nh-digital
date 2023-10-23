@@ -1,7 +1,6 @@
 import MagneticButton from '@/components/magneticButton';
 import Image from 'next/image';
 import Link from 'next/link';
-import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
 const image = {
   src: '/images/not-found/not-found.svg',
@@ -16,13 +15,17 @@ const NotFountPage = ({ className = '' }) => {
           <div className='row gy-5 gy-lg-0 justify-content-between'>
             <div className='col-lg-7'>
               <div className='content'>
-                <h2 data-aos='fade-up' data-aos-delay='200'>
+                <h2 data-aos='fade-up' data-aos-duration='200'>
                   404
                 </h2>
-                <p className='leading' data-aos='fade-up' data-aos-delay='400'>
+                <p
+                  className='leading'
+                  data-aos='fade-up'
+                  data-aos-duration='400'
+                >
                   Page not found
                 </p>
-                <p data-aos='fade-up' data-aos-delay='400'>
+                <p data-aos='fade-up' data-aos-duration='400'>
                   Sorry, this page isn’t available. The link you followed may be
                   broken, or the page may been removed. If you have any query,
                   please contact us.
@@ -32,7 +35,7 @@ const NotFountPage = ({ className = '' }) => {
                     href='/'
                     className='btn btn-primary button--wayra download'
                     data-aos='fade-up'
-                    data-aos-delay='500'
+                    data-aos-duration='500'
                   >
                     Back to home
                   </Link>
@@ -40,14 +43,12 @@ const NotFountPage = ({ className = '' }) => {
               </div>
             </div>
             <div className='col-lg-4'>
-              <div className='img' data-aos='fade-left' data-aos-delay='400'>
+              <div className='img' data-aos='fade-left' data-aos-duration='400'>
                 <Image
                   src={image.src}
                   alt={image.title}
                   width='705'
                   height='469'
-                  placeholder='blur'
-                  blurDataURL={shimmerBlurData}
                 />
               </div>
             </div>

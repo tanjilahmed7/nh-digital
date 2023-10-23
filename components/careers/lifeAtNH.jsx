@@ -48,7 +48,9 @@ const LifeAtNH = ({ data }) => {
                       <>
                         <div className='col-lg-5'>
                           <h3>{title}</h3>
-                          <p>{description}</p>
+                          <div
+                            dangerouslySetInnerHTML={{ __html: description }}
+                          />{' '}
                         </div>
                         <div className='col-sm-10 col-lg-6'>
                           <div className='section-img'>
@@ -79,7 +81,9 @@ const LifeAtNH = ({ data }) => {
                         </div>
                         <div className='col-lg-5'>
                           <h3>{title}</h3>
-                          <p>{description}</p>
+                          <div
+                            dangerouslySetInnerHTML={{ __html: description }}
+                          />
                         </div>
                       </>
                     )}

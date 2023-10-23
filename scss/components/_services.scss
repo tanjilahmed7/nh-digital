@@ -4,7 +4,6 @@
 
   @media (max-width: 767.98px) {
     border-bottom: none;
-    overflow: hidden;
   }
 
   .left {
@@ -147,6 +146,19 @@
         @media (max-width: 767.98px) {
           padding-top: 0;
         }
+      }
+    }
+  }
+
+  &-alt {
+    padding-top: 16px !important;
+  }
+
+  &:not(&-has-icon) {
+    .btn {
+      svg,
+      img {
+        display: none;
       }
     }
   }

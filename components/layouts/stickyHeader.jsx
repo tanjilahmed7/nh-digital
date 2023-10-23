@@ -1,18 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useState } from "react";
+import { useMenu } from '@/context/menuContext';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-const StickyHeader = ({ setToggleMenu, children }) => {
+const StickyHeader = ({ children }) => {
   const [isSticky, setIsSticky] = useState(false);
+  const { closeMenu } = useMenu();
 
   useEffect(() => {
     const handleRezie = () => {
       const screenSize = window.innerWidth;
 
       if (screenSize >= 992) {
-        setToggleMenu();
-        document.body.style.overflow = "auto";
+        closeMenu();
+        document.body.style.overflow = 'auto';
       }
     };
 
@@ -25,11 +27,10 @@ const StickyHeader = ({ setToggleMenu, children }) => {
       setIsSticky(false);
     };
 
-    window.addEventListener("resize", handleRezie);
-    window.addEventListener("scroll", handleScroll);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return <header className={isSticky ? "sticky" : ""}>{children}</header>;
+    window.addEventListener('resize', handleRezie);
+    window.addEventListener('scroll', handleScroll);
+  }, [closeMenu]);
+  return <header className={isSticky ? 'sticky' : ''}>{children}</header>;
 };
 
 export default StickyHeader;

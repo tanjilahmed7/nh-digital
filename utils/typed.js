@@ -10,4 +10,4 @@ var options = {
   fadeOutDelay: 1000,
 };
 
-var typed = new Typed(".hero__title span", options);
+// var typed = new Typed(".hero__title span", options);

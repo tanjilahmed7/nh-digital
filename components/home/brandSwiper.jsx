@@ -10,9 +10,14 @@ import 'swiper/scss';
 const BrandSwiper = ({ brands = [] }) => {
   return (
     <Swiper
+      watchOverflow={true}
       modules={[Autoplay]}
-      speed={2000}
-      autoplay={{ delay: 0, disableOnInteraction: false }}
+      speed={5000}
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+      }}
       loop={true}
       breakpoints={{
         0: {
@@ -49,6 +54,8 @@ const BrandSwiper = ({ brands = [] }) => {
         },
       }}
       className='mySwiper'
+      data-aos='fade-left'
+      data-aos-duration='800'
     >
       {brands.map((brand) => (
         <SwiperSlide key={brand._id}>

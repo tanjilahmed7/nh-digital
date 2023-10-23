@@ -52,7 +52,9 @@ const IncludedServicesTab = ({ services = [] }) => {
                 </div>
                 <div className='tab-content'>
                   <h4>{service.subtitle}</h4>
-                  <p>{service.description}</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: service.description }}
+                  />
                 </div>
               </div>
             </div>

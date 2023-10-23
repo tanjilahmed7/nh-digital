@@ -2,22 +2,6 @@ import Image from 'next/image';
 import AwardItem from './awardItem';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
-// awards data
-const awards = [
-  {
-    id: 0,
-    year: 2022,
-    description:
-      'We grow businesses by creating shopping experiences that turn everyday brands into industry leaders.',
-  },
-  {
-    id: 1,
-    year: 2022,
-    description:
-      'We grow businesses by creating shopping experiences that turn everyday brands into industry leaders.',
-  },
-];
-
 const Awards = ({ data }) => {
   const { image, title, items } = data || {};
   return (
@@ -36,7 +20,7 @@ const Awards = ({ data }) => {
               />
             </div>
           </div>
-          <div className='col-lg-6'>
+          <div className='col-lg-6' data-aos='fade-up' data-aos-duration='800'>
             <h2>{title}</h2>
             {items &&
               items.map((award) => <AwardItem key={award._id} award={award} />)}

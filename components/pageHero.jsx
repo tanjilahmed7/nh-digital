@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const PageHero = ({ className = "", children }) => {
+const PageHero = ({ className = '', children }) => {
   return (
     <section className={`page-hero hero section ${className}`}>
-      <div className="container">{children}</div>
+      <div className='container'>{children}</div>
     </section>
   );
 };

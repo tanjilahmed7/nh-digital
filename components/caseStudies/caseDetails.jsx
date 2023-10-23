@@ -10,12 +10,13 @@ const CaseDetails = ({ data, tags = {} }) => {
     description,
     project,
     full_width_image_two,
+    youtube_video_link,
     gallery_two,
     description_two,
   } = data || {};
 
   return (
-    <section className='case-study-details section'>
+    <section className='case-study-details'>
       {banner_image && (
         <div className='ratio ratio-16x9'>
           <Image
@@ -29,15 +30,20 @@ const CaseDetails = ({ data, tags = {} }) => {
         </div>
       )}
       <div className='container'>
-        <div className='section'>
-          <div className='row justify-content-center'>
-            <div className='col-lg-8'>{subtitle && <h4>{subtitle}</h4>}</div>
+        {subtitle && (
+          <div className='section'>
+            <div className='row justify-content-center'>
+              <div className='col-lg-8'>
+                <h4>{subtitle}</h4>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className='section pt-0'>
-          <div className='row g-2'>
-            {gallery &&
-              gallery.map((image, index) => (
+        )}
+
+        {gallery.length > 0 && (
+          <div className='section'>
+            <div className='row g-2'>
+              {gallery.map((image, index) => (
                 <div className='col-md-6' key={index}>
                   <Image
                     src={image.image}
@@ -51,11 +57,12 @@ const CaseDetails = ({ data, tags = {} }) => {
                   />
                 </div>
               ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {description && (
-          <div className='section pt-0'>
+          <div className='section'>
             <div className='row justify-content-center'>
               <div className='col-lg-8'>
                 <div dangerouslySetInnerHTML={{ __html: description }}></div>
@@ -64,9 +71,9 @@ const CaseDetails = ({ data, tags = {} }) => {
           </div>
         )}
 
-        <div className='section pt-0'>
-          <div className='row g-2'>
-            {full_width_image_two && (
+        {(full_width_image_two || gallery_two.length > 0) && (
+          <div className='section'>
+            <div className='row g-2'>
               <div className='col-12'>
                 <div className='ratio ratio-16x9'>
                   <Image
@@ -77,12 +84,23 @@ const CaseDetails = ({ data, tags = {} }) => {
                     placeholder='blur'
                     blurDataURL={shimmerBlurData}
                   />
+                  {youtube_video_link && (
+                    <div className='col-12'>
+                      <div className='ratio ratio-16x9'>
+                        <iframe
+                          src={youtube_video_link}
+                          title='YouTube video player'
+                          frameBorder='0'
+                          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
 
-            {gallery_two &&
-              gallery_two.map((image, index) => (
+              {gallery_two.map((image, index) => (
                 <div className='col-md-6' key={index}>
                   <Image
                     src={image.image}
@@ -96,24 +114,35 @@ const CaseDetails = ({ data, tags = {} }) => {
                   />
                 </div>
               ))}
-          </div>
-        </div>
-        <div>
-          <div className='row justify-content-center'>
-            <div className='col-lg-8'>
-              <div dangerouslySetInnerHTML={{ __html: description_two }}></div>
-
-              <div className='case-study-stats'>
-                {project &&
-                  project.map((item, index) => (
-                    <div className='case-study-item' key={index}>
-                      <h3>{item.count + item.prefix}</h3>
-                      <p>{item.title}</p>
-                    </div>
-                  ))}
-              </div>
             </div>
           </div>
+        )}
+
+        <div className='section'>
+          {project.length > 0 ||
+            (description_two && (
+              <div className='row justify-content-center'>
+                <div className='col-lg-8'>
+                  {description_two && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: description_two }}
+                    ></div>
+                  )}
+
+                  {project.length > 0 && (
+                    <div className='case-study-stats'>
+                      {project.map((item, index) => (
+                        <div className='case-study-item' key={index}>
+                          <h3>{item.count + item.prefix}</h3>
+                          <p>{item.title}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <hr />
+                </div>
+              </div>
+            ))}
           <SocialShare tags={tags} />
         </div>
       </div>

@@ -94,6 +94,7 @@ const CaseStudies = ({ className = '', children }) => {
           <Swiper
             ref={swiperRef}
             loop={true}
+            watchOverflow={true}
             breakpoints={{
               0: {
                 slidesPerView: 1.5,

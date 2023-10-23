@@ -32,7 +32,6 @@ const ContactUsPage = async () => {
           const data = JSON.parse(block.attributesJSON)?.data;
           return <Component key={index} data={data} />;
         })}
-      
     </main>
   );
 };

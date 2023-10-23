@@ -8,7 +8,7 @@ const AOSWrapper = ({ children }) => {
     AOS.init();
   }, []);
 
-  return <div>{children}</div>;
+  return <div className='aos-wrapper'>{children}</div>;
 };
 
 export default AOSWrapper;

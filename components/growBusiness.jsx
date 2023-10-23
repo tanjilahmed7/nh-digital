@@ -3,30 +3,24 @@ import React from 'react';
 import MagneticButton from './magneticButton';
 import classNames from 'classnames';
 import Link from 'next/link';
-
+import { shimmerBlurData } from '@/constants/shimmerBlurData';
 const GrowBusiness = ({ className = '', data }) => {
-	const { title, description, button_text, button_url, image, custom_class } =
-		data || {};
+  const { title, description, button_text, button_url, image, custom_class } =
+    data || {};
 
-	className = classNames(className, custom_class);
-	return (
+  className = classNames(className, custom_class);
+  return (
     <section className={`business section ${className}`}>
       <div className='container'>
         <div className='row gy-5 gy-lg-0'>
-          <div className='col-lg-5'>
+          <div className='col-lg-5' data-aos='fade-up' data-aos-duration='800'>
             <div className='content'>
-              <h2 data-aos='fade-up' data-aos-delay='200'>
-                {title}
-              </h2>
-              <p data-aos='fade-up' data-aos-delay='400'>
-                {description}
-              </p>
+              <h2>{title}</h2>
+              <p>{description}</p>
               <MagneticButton>
                 <Link
                   href='#'
                   className='btn btn-primary button--wayra download'
-                  data-aos='fade-up'
-                  data-aos-delay='500'
                 >
                   <svg
                     width='20'
@@ -45,15 +39,15 @@ const GrowBusiness = ({ className = '', data }) => {
               </MagneticButton>
             </div>
           </div>
-          <div className='col-lg-7'>
-            <div className='img' data-aos='fade-left' data-aos-delay='400'>
+          <div className='col-lg-7' data-aos='fade-up' data-aos-duration='1000'>
+            <div className='img'>
               <Image
                 src={image}
                 alt={title}
                 width='705'
                 height='469'
                 placeholder='blur'
-                blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNFMEUwRTAiPjwvcmVjdD48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjRUNFQ0VFIiBvZmZzZXQ9IjAiPjwvc3RvcD48c3RvcCBzdG9wLWNvbG9yPSIjRjRGNEY0IiBvZmZzZXQ9IjEiPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0idXJsKCNnKSI+PC9yZWN0Pjwvc3ZnPg=='
+                blurDataURL={shimmerBlurData}
               />
             </div>
           </div>

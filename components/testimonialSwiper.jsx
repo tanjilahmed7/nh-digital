@@ -17,15 +17,16 @@ const TestimonialSwiper = ({ items }) => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        data-aos='fade-up'
-        data-aos-duration='400'
+        watchOverflow={true}
       >
         {items &&
           items.map((item, index) => (
             <SwiperSlide key={item._id}>
               <div className='card'>
                 <div className='card-body'>
-                  <p>{item.description}</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></div>
                   <div className='d-flex align-items-center'>
                     <Image
                       src={item.image}
@@ -36,7 +37,7 @@ const TestimonialSwiper = ({ items }) => {
                       blurDataURL={shimmerBlurData}
                     />
                     <div className='info'>
-                      <span className='name'>{item.name}</span>
+                      <h4>{item.name}</h4>
                       <p>{item.position}</p>
                     </div>
                   </div>

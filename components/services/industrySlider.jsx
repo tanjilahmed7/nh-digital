@@ -18,6 +18,7 @@ const IndustrySlider = ({ experiencees }) => {
   return (
     <div className='swiper-container'>
       <Swiper
+        watchOverflow={true}
         ref={swiperRef}
         loop={true}
         breakpoints={{
@@ -43,7 +44,7 @@ const IndustrySlider = ({ experiencees }) => {
           },
         }}
         data-aos='fade-left'
-        data-aos-delay='300'
+        data-aos-duration='300'
       >
         {experiencees.map((item) => (
           <SwiperSlide key={item._id}>

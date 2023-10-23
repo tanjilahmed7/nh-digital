@@ -1,4 +1,4 @@
-const Loader = () => {
+export default function Loading() {
   return (
     <div className='loader-container'>
       <div className='dot'></div>
@@ -8,6 +8,4 @@ const Loader = () => {
       <div className='dot'></div>
     </div>
   );
-};
-
-export default Loader;
+}

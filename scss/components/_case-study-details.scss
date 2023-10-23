@@ -1,8 +1,8 @@
 .case-study-summary {
-  margin-top: 60px;
+  padding-block: 4rem 0;
 
   @media (max-width: 991.98px) {
-    margin-top: 0;
+    padding-block: 3rem 0;
   }
 
   h2 {
@@ -77,11 +77,25 @@
 }
 
 .case-study-details {
+  padding-bottom: 3rem;
+
   h2,
   h3,
   h4,
   p {
     margin-bottom: 20px;
+  }
+
+  .section {
+    padding-block: 3rem 0;
+
+    @media (min-width: 992px) {
+      padding-block: 4rem 0;
+    }
+
+    @media (min-width: 1200px) {
+      padding-block: 4rem 0;
+    }
   }
 
   img {
@@ -150,9 +164,6 @@
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid rgba($black, 0.1);
 
     @media (max-width: 575.98px) {
       grid-template-columns: 1fr;
@@ -175,7 +186,7 @@
         font-weight: 400;
 
         &::after {
-          content: "";
+          content: '';
           width: 40px;
           height: 2px;
           background-color: $blue;
@@ -188,6 +199,11 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  hr {
+    margin-block: 50px;
+    border-color: rgba($black, 0.2);
   }
 
   .social-share {
@@ -215,7 +231,7 @@
       justify-content: flex-start;
     }
 
-    li {
+    li a {
       color: #4d4d4d;
       padding: 10px 20px;
       font-size: 12px;
@@ -224,6 +240,10 @@
       border: 1px solid rgba($black, 0.1);
       border-radius: 50rem;
       transition: 300ms;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         background-color: $blue;

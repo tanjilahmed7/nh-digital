@@ -6,16 +6,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
 const LeadershipSlider = ({ leaders }) => {
-	const [swiper, setSwiper] = useState(null);
-	const swiperRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  const swiperRef = useRef(null);
 
-	useEffect(() => {
-		if (swiperRef.current) {
-			setSwiper(swiperRef.current.swiper);
-		}
-	}, []);
+  useEffect(() => {
+    if (swiperRef.current) {
+      setSwiper(swiperRef.current.swiper);
+    }
+  }, []);
 
-	return (
+  return (
     <div className='swiper-container'>
       <Swiper
         ref={swiperRef}
@@ -42,6 +42,7 @@ const LeadershipSlider = ({ leaders }) => {
             spaceBetween: 30,
           },
         }}
+        watchOverflow={true}
         data-aos='fade-left'
         data-aos-duration='800'
       >

@@ -3,9 +3,9 @@ import Header from '@/components/layouts/header';
 import Footer from '@/components/layouts/footer';
 import '@/scss/styles.scss';
 import CursorEffect from '@/components/cursorEffect';
-import { Suspense } from 'react';
 import { fetchMenus } from '@/graphql/pages/GET_MENUS';
 import Loader from '@/components/loader';
+import { MenuProvider } from '@/context/menuContext';
 
 export const metadata = {
   metadataBase: new URL('https://www.notionhive.com/'),
@@ -45,7 +45,9 @@ export default async function RootLayout({ children }) {
       <body>
         <CursorEffect>
           <AOSWrapper>
-            <Header navLinks={PrimaryMenu} />
+            <MenuProvider>
+              <Header navLinks={PrimaryMenu} />
+            </MenuProvider>
             {children}
             <Footer servicesMenus={ServiceMenu} QuickLinksMenus={QuickLinks} />
           </AOSWrapper>
