@@ -1,0 +1,104 @@
+.nh-modal {
+  --animate-duration: 300ms;
+  --modal-bg: #{rgba($black, 0.45)};
+  --modal-content-bg: #{$white};
+  --modal-width: 576px;
+  --modal-padding-x: 1rem;
+  --modal-padding-y: 1rem;
+  --modal-margin-x: auto;
+  --modal-margin-y: 1rem;
+  --modal-border-radius: 0.5rem;
+
+  position: fixed;
+  inset: 0;
+  background-color: var(--modal-bg);
+  z-index: 1060;
+  transition:
+    inset 300ms,
+    opacity 300ms,
+    visibility 300ms;
+  opacity: 0;
+  visibility: hidden;
+
+  @media (min-width: 992px) {
+    --modal-padding-x: #{calc(1rem * 1.5)};
+    --modal-padding-y: #{calc(1rem * 1.5)};
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+
+    .nh-modal-content {
+      transform: translateY(0);
+    }
+  }
+
+  &-dialog {
+    margin: var(--modal-margin-y) var(--modal-margin-x);
+    width: 100%;
+    max-width: var(--modal-width);
+
+    @media (min-width: 992px) {
+      margin: calc(var(--modal-margin-y) * 1.5) var(--modal-margin-x);
+    }
+
+    &-sm {
+      --modal-width: 266px;
+    }
+
+    &-lg {
+      --modal-width: 840px;
+    }
+
+    &-xl {
+      --modal-width: 1024px;
+    }
+
+    &-full {
+      --modal-width: 100%;
+    }
+
+    &-centered {
+      display: flex;
+      align-items: center;
+    }
+
+    &-scrolled {
+      height: calc(100vh - var(--modal-padding-y) * 2);
+    }
+  }
+
+  &-content {
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--modal-content-bg);
+    border-radius: var(--modal-border-radius);
+    margin-inline: var(--modal-margin-y) var(--modal-margin-y);
+    transition: transform 300ms;
+    transform: translateY(-2rem);
+  }
+
+  &-body {
+    flex: 1;
+    overflow: auto;
+    padding: var(--modal-padding-y) var(--modal-padding-x);
+  }
+
+  &-header,
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: var(--modal-padding-y) var(--modal-padding-x);
+  }
+
+  &-header {
+    .btn-close {
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+  }
+}

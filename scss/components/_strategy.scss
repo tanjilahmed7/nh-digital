@@ -59,6 +59,20 @@
   }
 
   &-alt {
+    padding-block: 100px !important;
+
+    @media (max-width: 991.98px) {
+      padding-block: 80px !important;
+    }
+
+    @media (max-width: 767.98px) {
+      padding-block: 60px !important;
+    }
+
+    @media (max-width: 575.98px) {
+      padding-block: 50px !important;
+    }
+
     .h3 {
       font-size: 1.5rem;
       line-height: 1.4;

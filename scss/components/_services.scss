@@ -56,11 +56,13 @@
   }
 
   &-card {
-    background: #121212;
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px;
     box-sizing: border-box;
     height: 355px;
+    border-color: transparent;
+    background-color: transparent;
     .card-body {
+      background: #121212;
       padding: 40px;
       position: relative;
 
@@ -96,7 +98,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
       transition: 300ms;
-      background: transparent;
+      background: #121212;
       // transition transform animation background-color
       a {
         padding: 16px 40px;

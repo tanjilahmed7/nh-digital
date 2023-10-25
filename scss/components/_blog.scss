@@ -119,47 +119,11 @@
       }
     }
   }
-  .swiper-button-prev {
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-      border: 1px solid rgba($blue, 0.4);
-      svg {
-        path {
-          fill: $blue;
-        }
-      }
-    }
-    @media (max-width: 575.98px) {
-      display: none;
-    }
-  }
+
+  .swiper-button-prev,
   .swiper-button-next {
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
     &:hover {
-      border: 1px solid rgba($blue, 0.4);
-      svg {
-        path {
-          fill: $blue;
-        }
-      }
-    }
-    @media (max-width: 575.98px) {
-      display: none;
+      background-color: rgba($black, 0.1);
     }
   }
 }

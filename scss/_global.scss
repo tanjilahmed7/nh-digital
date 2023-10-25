@@ -241,6 +241,8 @@ img {
 
   &-hero {
     padding-bottom: 32px !important;
+    margin-bottom: -1px;
+    overflow: hidden;
 
     .services-card {
       .card-body {
@@ -392,5 +394,34 @@ hr {
 
   @media (min-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.btn-close {
+  border: 1px solid rgba($black, 0.4);
+  color: rgba($black, 0.4);
+  background-color: $white;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  transition: 300ms;
+  border-radius: 50rem;
+
+  &:hover {
+    border-color: $black;
+    color: $black;
+  }
+}
+
+.video-iframe {
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
   }
 }

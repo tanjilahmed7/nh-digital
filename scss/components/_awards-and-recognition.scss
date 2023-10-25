@@ -56,19 +56,16 @@
     }
 
     .btn {
-      border-color: rgba($white, 0.1);
+      border-radius: 50rem;
+      border-color: $white;
       color: $white;
-
-      &::before {
-        background-color: $white;
-      }
+      cursor: default;
+      background-color: transparent;
 
       &:hover {
-        color: $black;
-
-        &::before {
-          background-color: $white;
-        }
+        border-color: $white;
+        color: $white;
+        background-color: transparent;
       }
     }
   }

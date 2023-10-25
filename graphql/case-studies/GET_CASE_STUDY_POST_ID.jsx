@@ -11,13 +11,6 @@ const GET_CASE_STUDY_POST_ID = gql`
         name
         attributesJSON
       }
-      seo {
-        canonical
-        cornerstone
-        metaDesc
-        metaKeywords
-        title
-      }
     }
   }
   ${CaseStudyDetails}

@@ -5,6 +5,7 @@ import Hero from '@/components/global/hero';
 import componentMap from '@/components';
 import { getPostBySlug, getPostsSlug } from '@/graphql/blogs/GET_POST_BY_SLUG';
 import { notFound } from 'next/navigation';
+import { Fragment } from 'react';
 
 export async function generateStaticParams() {
   const { posts } = (await getPostsSlug()) || {};
@@ -72,10 +73,14 @@ const BlogsPage = async ({ params }) => {
       <Hero data={heroData}>
         <div className='tags'>
           {categories &&
-            categories?.nodes?.map((category) => (
-              <Link href='#' key={category.id}>
-                {category.name}
-              </Link>
+            categories?.nodes?.map((category, index, arr) => (
+              <Fragment key={category.id}>
+                <span
+                  className='tags-link'
+                  dangerouslySetInnerHTML={{ __html: category.name }}
+                ></span>
+                {arr.length - 1 !== index && ', '}
+              </Fragment>
             ))}
         </div>
       </Hero>

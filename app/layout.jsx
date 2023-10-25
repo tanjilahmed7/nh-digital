@@ -6,6 +6,7 @@ import CursorEffect from '@/components/cursorEffect';
 import { fetchMenus } from '@/graphql/pages/GET_MENUS';
 import Loader from '@/components/loader';
 import { MenuProvider } from '@/context/menuContext';
+import { ModalProvider } from '@/context/modalContext';
 
 export const metadata = {
   metadataBase: new URL('https://www.notionhive.com/'),
@@ -48,7 +49,7 @@ export default async function RootLayout({ children }) {
             <MenuProvider>
               <Header navLinks={PrimaryMenu} />
             </MenuProvider>
-            {children}
+            <ModalProvider>{children}</ModalProvider>
             <Footer servicesMenus={ServiceMenu} QuickLinksMenus={QuickLinks} />
           </AOSWrapper>
         </CursorEffect>
