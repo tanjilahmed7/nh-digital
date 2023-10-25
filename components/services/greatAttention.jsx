@@ -9,21 +9,17 @@ const GreatAttention = ({ data }) => {
       <div className='container'>
         <div className='row gy-5 gy-lg-0'>
           <div className='col-lg-6'>
-            <div className='section-content'>
-              <h2
-                className='section-title'
-                data-aos='fade-up'
-                data-aos-duration='400'
-              >
-                {title}
-              </h2>
+            <div
+              className='section-content'
+              data-aos='fade-up'
+              data-aos-duration='800'
+            >
+              <h2 className='section-title'>{title}</h2>
               {button_title && button_url && (
                 <MagneticButton className='d-none d-md-inline-block'>
                   <Link
                     href={button_url}
                     className='btn btn-primary button--wayra'
-                    data-aos='fade-up'
-                    data-aos-duration='600'
                   >
                     {button_title}
                   </Link>
@@ -34,13 +30,15 @@ const GreatAttention = ({ data }) => {
           <div className='col-lg-6'>
             <Accordion items={tabs} />
             {button_title && button_url && (
-              <div className='text-center'>
-                <MagneticButton className='d-md-none'>
+              <div
+                className='text-center d-md-none'
+                data-aos='fade-up'
+                data-aos-duration='600'
+              >
+                <MagneticButton>
                   <Link
                     href={button_url}
                     className='btn btn-primary button--wayra'
-                    data-aos='fade-up'
-                    data-aos-duration='600'
                   >
                     {button_title}
                   </Link>

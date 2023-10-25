@@ -11,6 +11,7 @@ const CaseSummary = ({ data }) => {
     button_title,
     button_url,
   } = data || {};
+
   return (
     <div className='case-study-summary'>
       <div className='container'>
@@ -50,41 +51,43 @@ const CaseSummary = ({ data }) => {
                 </ul>
               </div>
             )}
-
-            <div className='summary-item'>
-              <MagneticButton>
-                <Link
-                  href={button_url}
-                  className='btn btn-stacked button--wayra'
-                >
-                  {button_title}
-                  <svg
-                    width='21'
-                    height='20'
-                    viewBox='0 0 21 20'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <g clipPath='url(#clip0_771_5516)'>
-                      <path
-                        d='M6.37517 3.51814L6.37517 5.16806L14.1528 5.16865L3.42889 15.8925L4.6074 17.071L15.3313 6.34716L15.3319 14.1247H16.9818L16.9818 3.51814L6.37517 3.51814Z'
-                        fill='#1158E5'
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id='clip0_771_5516'>
-                        <rect
-                          width='20'
-                          height='20'
-                          fill='white'
-                          transform='translate(0.5)'
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </Link>
-              </MagneticButton>
-            </div>
+            {button_title &&
+              button_url(
+                <div className='summary-item'>
+                  <MagneticButton>
+                    <Link
+                      href={button_url}
+                      className='btn btn-stacked button--wayra'
+                    >
+                      {button_title}
+                      <svg
+                        width='21'
+                        height='20'
+                        viewBox='0 0 21 20'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clipPath='url(#clip0_771_5516)'>
+                          <path
+                            d='M6.37517 3.51814L6.37517 5.16806L14.1528 5.16865L3.42889 15.8925L4.6074 17.071L15.3313 6.34716L15.3319 14.1247H16.9818L16.9818 3.51814L6.37517 3.51814Z'
+                            fill='#1158E5'
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id='clip0_771_5516'>
+                            <rect
+                              width='20'
+                              height='20'
+                              fill='white'
+                              transform='translate(0.5)'
+                            />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
+                  </MagneticButton>
+                </div>
+              )}
           </div>
           <div className='col-lg-8'>
             <div dangerouslySetInnerHTML={{ __html: description }}></div>

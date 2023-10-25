@@ -2,6 +2,7 @@ import PageHeader from '../pageHeader';
 import PageHero from '../pageHero';
 import Image from 'next/image';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
+import PageBanner from '../pageBanner';
 
 const Hero = ({ data, children, parent = {} }) => {
   const { title, subtitle, pagetitle, image } = data;
@@ -25,20 +26,23 @@ const Hero = ({ data, children, parent = {} }) => {
         </PageHeader>
       </PageHero>
       {image && (
-        <div
-          className='ratio ratio-21x9'
-          data-aos='fade-in'
-          data-aos-duration='800'
-        >
-          <Image
-            src={image}
-            alt='banner'
-            width={1110}
-            height={625}
-            placeholder='blur'
-            blurDataURL={shimmerBlurData}
-          />
-        </div>
+        <PageBanner>
+          <div
+            className='ratio ratio-16x9 rounded-3'
+            data-aos='fade-in'
+            data-aos-duration='800'
+          >
+            <Image
+              src={image}
+              alt='banner'
+              className='banner-img rounded-3'
+              width={1110}
+              height={625}
+              placeholder='blur'
+              blurDataURL={shimmerBlurData}
+            />
+          </div>
+        </PageBanner>
       )}
     </>
   );

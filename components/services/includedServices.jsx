@@ -8,7 +8,11 @@ const IncludedServices = ({ data }) => {
   return (
     <section className='included-services section'>
       <div className='container'>
-        <div className='section-header'>
+        <div
+          className='section-header'
+          data-aos='fade-up'
+          data-aos-duration='800'
+        >
           <h2>{title}</h2>
           <p>{description}</p>
         </div>

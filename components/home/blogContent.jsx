@@ -6,7 +6,7 @@ import Blog from './blog';
 import 'swiper/scss';
 import useSwiperSlider from '../../hooks/useSwiperSlider';
 
-const BlogContent = ({ blogs }) => {
+const BlogContent = ({ title = 'Blogs', blogs }) => {
   const [swiperRef, swiper] = useSwiperSlider();
   const { nodes } = blogs || {};
   return (
@@ -18,7 +18,7 @@ const BlogContent = ({ blogs }) => {
           data-aos-duration='800'
         >
           <div className='section_title'>
-            <h2>Blogs</h2>
+            <h2>{title}</h2>
           </div>
           <div className='d-flex justify-content-end gap-3 ms-auto'>
             <div

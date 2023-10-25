@@ -3,6 +3,7 @@ import Link from 'next/link';
 import MagneticButton from '../magneticButton';
 import { getPost } from '@/graphql/blogs/GET_POST';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
+import { Fragment } from 'react';
 
 const FeaturedBlogPost = async ({ data }) => {
   const id = parseInt(data?.post);
@@ -34,13 +35,15 @@ const FeaturedBlogPost = async ({ data }) => {
           </Link>
           <div className='content'>
             <div className='tags'>
-              {post?.categories.map((category, index) => (
-                <Link
-                  key={index}
-                  href={`blog/${post.slug}`}
-                  className='tags-link'
-                  dangerouslySetInnerHTML={{ __html: category.name }}
-                ></Link>
+              {post?.categories.map((category, index, arr) => (
+                <Fragment key={index}>
+                  <Link
+                    href={`blog/${post.slug}`}
+                    className='tags-link'
+                    dangerouslySetInnerHTML={{ __html: category.name }}
+                  ></Link>
+                  {arr.length - 1 !== index && ', '}
+                </Fragment>
               ))}
             </div>
             <h3>

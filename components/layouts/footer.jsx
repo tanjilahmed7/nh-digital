@@ -12,6 +12,20 @@ const Footer = ({ servicesMenus, QuickLinksMenus }) => {
           <div className='row gy-5 gy-xl-0 gx-3 justify-content-between'>
             <div className='col-xl-3'>
               {/* <FooterNewsletter /> */}
+              <div className='footer-brand'>
+                <Link href='/'>
+                  <Image
+                    src='/images/notionhive-digital.png'
+                    alt='Notionhive Digital'
+                    width={145}
+                    height={68}
+                  />
+                </Link>
+                <p>
+                  Award winning full-service, creative digital agency,
+                  collaborating with brands all over the world.
+                </p>
+              </div>
               <h4 className='sub-title'>Awards & Recognition</h4>
               <div className='awards'>
                 <Image

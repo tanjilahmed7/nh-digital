@@ -19,7 +19,11 @@ const OurProcess = ({ data }) => {
   return (
     <section className='our-process section'>
       <div className='container'>
-        <div className='section-header'>
+        <div
+          className='section-header'
+          data-aos='fade-up'
+          data-aos-duration='800'
+        >
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
@@ -51,7 +55,7 @@ const OurProcess = ({ data }) => {
               },
             }}
             data-aos='fade-left'
-            data-aos-duration='300'
+            data-aos-duration='800'
           >
             {items &&
               items.map((item, index) => (

@@ -1,9 +1,13 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['localhost', 'staging.notionhive.com', 'digital.notionhive.com'],
+    loader: 'default',
   },
-
+  // experimental: {
+  //   serverActions: true,
+  // },
   // async redirects() {
   //   return [
   //     {
@@ -15,4 +19,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

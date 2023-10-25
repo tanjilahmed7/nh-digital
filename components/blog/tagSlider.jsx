@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchPosts } from '@/graphql/GET_POSTS';
 import MagneticButton from '../magneticButton';
@@ -88,36 +88,46 @@ const TagSlider = ({ tags = [], excludeIds, initialPosts }) => {
             ))}
         </Swiper>
 
-        <div className='swiper-button-prev' onClick={() => swiper.slidePrev()}>
-          <svg
-            width='12'
-            height='12'
-            viewBox='0 0 12 12'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M8.3125 1L3 6L8.281 11L9 10.297L4.453 6L9 1.719L8.3125 1Z'
-              fill='black'
-              fillOpacity='0.8'
-            ></path>
-          </svg>
-        </div>
-        <div className='swiper-button-next' onClick={() => swiper.slideNext()}>
-          <svg
-            width='12'
-            height='12'
-            viewBox='0 0 12 12'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M3.6875 11L9 6L3.719 1L3 1.703L7.547 6L3 10.281L3.6875 11Z'
-              fill='black'
-              fillOpacity='0.8'
-            ></path>
-          </svg>
-        </div>
+        {tags.length > 8 && (
+          <>
+            <div
+              className='swiper-button-prev'
+              onClick={() => swiper.slidePrev()}
+            >
+              <svg
+                width='12'
+                height='12'
+                viewBox='0 0 12 12'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M8.3125 1L3 6L8.281 11L9 10.297L4.453 6L9 1.719L8.3125 1Z'
+                  fill='black'
+                  fillOpacity='0.8'
+                ></path>
+              </svg>
+            </div>
+            <div
+              className='swiper-button-next'
+              onClick={() => swiper.slideNext()}
+            >
+              <svg
+                width='12'
+                height='12'
+                viewBox='0 0 12 12'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M3.6875 11L9 6L3.719 1L3 1.703L7.547 6L3 10.281L3.6875 11Z'
+                  fill='black'
+                  fillOpacity='0.8'
+                ></path>
+              </svg>
+            </div>
+          </>
+        )}
       </div>
       <Items posts={posts}></Items>
       <div className='text-center'>

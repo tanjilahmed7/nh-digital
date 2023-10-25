@@ -6,7 +6,7 @@ const AwardItem = ({ award = [] }) => {
   return (
     <div className='awards-and-recognition-item'>
       <div className='magnetic'>
-        <div className='btn btn-stacked button--wayra'>{title}</div>
+        <div className='btn'>{title}</div>
       </div>
       <div className='content'>
         <p>{description}</p>

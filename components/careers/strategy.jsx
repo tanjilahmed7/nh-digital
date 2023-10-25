@@ -3,7 +3,7 @@ import Counter from '../counter';
 const Strategy = ({ data }) => {
   const { title, strategy_items } = data || {};
   return (
-    <section className='strategy section pb-0'>
+    <section className='strategy section'>
       <div className='container'>
         <div className='stragegy-item'>
           <div className='row'>

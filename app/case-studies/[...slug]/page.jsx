@@ -19,7 +19,7 @@ export async function generateMetadata({ params: { slug } }) {
 }
 
 const CaseStudyPage = async ({ params: slug }) => {
-  const { blocks, pageInfo, loading, error } =
+  const { blocks, pageInfo } =
     (await fetchCaseStudyPostById(slug['slug'][0])) || {};
 
   return (

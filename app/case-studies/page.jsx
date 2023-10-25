@@ -3,8 +3,6 @@ import componentMap from '@/components';
 import { fetchCaseStudyItem } from '@/graphql/pages/GET_STUDIES';
 
 
-
-
 export async function generateMetadata() {
     const data = (await fetchCaseStudyItem()) || {};
    const seo = data?.page?.seo || {};

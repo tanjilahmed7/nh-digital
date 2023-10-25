@@ -18,20 +18,18 @@ const Posts = async ({ data }) => {
   return (
     <section className='blog-posts section pt-0'>
       <div className='container'>
-        <div className='row g-4'>
-          <div className='col-lg-8'>
-            <TagSlider
-              tags={categories}
-              initialPosts={posts}
-              excludeIds={excludePosts}
-            />
-          </div>
-          <div className='col-lg-4'>
-            <StickyElement>
-              <Newsletter />
-            </StickyElement>
-          </div>
-        </div>
+        {/* <div className='row g-4'> */}
+        {/* <div className='col-lg-8'> */}
+        <TagSlider
+          tags={categories}
+          initialPosts={posts}
+          excludeIds={excludePosts}
+        />
+        {/* </div> */}
+        {/* <div className='col-lg-4'>
+            <StickyElement> <Newsletter /> </StickyElement>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ const Header = ({ navLinks }) => {
           <div className='container'>
             <Link href='/' className='logo'>
               <Image
-                src='/images/logo.svg'
+                src='/images/notionhive-digital.png'
                 alt='logo'
                 width='160'
                 height='24'

@@ -44,7 +44,7 @@ const IndustrySlider = ({ experiencees }) => {
           },
         }}
         data-aos='fade-left'
-        data-aos-duration='300'
+        data-aos-duration='800'
       >
         {experiencees.map((item) => (
           <SwiperSlide key={item._id}>

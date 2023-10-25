@@ -7,7 +7,7 @@ const BlogPost = ({ content, categories }) => {
   return (
     <section className='blog-posts blog-details section'>
       <div className='container'>
-        <div className='row g-4'>
+        <div className='row g-4 justify-content-center'>
           <div className='col-lg-8'>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <hr />
@@ -87,11 +87,9 @@ const BlogPost = ({ content, categories }) => {
               </div>
             </div>
           </div>
-          <div className='col-lg-4'>
-            <StickyElement>
-              <Newsletter />
-            </StickyElement>
-          </div>
+          {/* <div className='col-lg-4'>
+            <StickyElement><Newsletter /></StickyElement>
+          </div> */}
         </div>
       </div>
     </section>

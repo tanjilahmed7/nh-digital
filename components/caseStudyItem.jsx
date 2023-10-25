@@ -16,10 +16,14 @@ const CaseStudyItem = ({ href, img, title, tags }) => {
         />
       </Link>
       <div className='case_studies_content'>
-        <Link href={href}>{title}</Link>
+        <h3>
+          <Link href={href}>{title}</Link>
+        </h3>
         <ul className='tag'>
           {tags.slice(0, 3).map((tag, index) => (
-            <li key={index}>{tag.name}</li>
+            <li key={index}>
+              <Link href={`/case-studies/${tag.slug}`}>{tag.name}</Link>
+            </li>
           ))}
         </ul>
       </div>

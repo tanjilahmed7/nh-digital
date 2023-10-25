@@ -15,6 +15,7 @@ const CaseDetails = ({ data, tags = {} }) => {
     description_two,
   } = data || {};
 
+
   return (
     <section className='case-study-details'>
       {banner_image && (
@@ -83,6 +84,7 @@ const CaseDetails = ({ data, tags = {} }) => {
                     height={400}
                     placeholder='blur'
                     blurDataURL={shimmerBlurData}
+                    className='object-fit-cover rounded-0'
                   />
                 </div>
               </div>
@@ -92,7 +94,7 @@ const CaseDetails = ({ data, tags = {} }) => {
                   <Image
                     src={image.image}
                     alt=''
-                    className='w-100'
+                    className='w-100 object-fit-cover rounded-3'
                     width={600}
                     height={600}
                     priority={index === 0 ? true : false}
@@ -117,30 +119,30 @@ const CaseDetails = ({ data, tags = {} }) => {
               ></iframe>
             </div>
           )}
-          {project.length > 0 ||
-            (description_two && (
-              <div className='row justify-content-center'>
-                <div className='col-lg-8'>
-                  {description_two && (
-                    <div
-                      dangerouslySetInnerHTML={{ __html: description_two }}
-                    ></div>
-                  )}
 
-                  {project.length > 0 && (
-                    <div className='case-study-stats'>
-                      {project.map((item, index) => (
-                        <div className='case-study-item' key={index}>
-                          <h3>{item.count + item.prefix}</h3>
-                          <p>{item.title}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  <hr />
-                </div>
+          {(project.length > 0 || description_two) && (
+            <div className='row justify-content-center'>
+              <div className='col-lg-8'>
+                {description_two && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: description_two }}
+                  ></div>
+                )}
+
+                {project.length > 0 && (
+                  <div className='case-study-stats'>
+                    {project.map((item, index) => (
+                      <div className='case-study-item' key={index}>
+                        <h3>{item.count + item.prefix}</h3>
+                        <p>{item.title}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <hr />
               </div>
-            ))}
+            </div>
+          )}
           <SocialShare tags={tags} />
         </div>
       </div>

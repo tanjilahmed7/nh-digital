@@ -14,7 +14,7 @@ const IncludedServicesTab = ({ services = [] }) => {
   return (
     <div className='row gx-0 gy-5 gx-md-4 mb-5 pb-4'>
       <div className='col-md-4 col-lg-3'>
-        <div className='tabs tabs-v'>
+        <div className='tabs tabs-v' data-aos='fade-up' data-aos-duration='800'>
           <ul>
             {services.map((service, index) => (
               <li key={`tabs` + service._id}>
@@ -40,7 +40,11 @@ const IncludedServicesTab = ({ services = [] }) => {
               className={`tabpane ${isActive === service._id ? 'show' : ''}`}
             >
               <div className='service-item'>
-                <div className='img'>
+                <div
+                  className='img'
+                  data-aos='fade-up'
+                  data-aos-duration='1000'
+                >
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -50,7 +54,11 @@ const IncludedServicesTab = ({ services = [] }) => {
                     blurDataURL={shimmerBlurData}
                   />
                 </div>
-                <div className='tab-content'>
+                <div
+                  className='tab-content'
+                  data-aos='fade-up'
+                  data-aos-duration='1200'
+                >
                   <h4>{service.subtitle}</h4>
                   <div
                     dangerouslySetInnerHTML={{ __html: service.description }}

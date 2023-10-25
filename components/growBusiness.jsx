@@ -1,10 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import MagneticButton from './magneticButton';
 import classNames from 'classnames';
-import Link from 'next/link';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
+import DownloadModal from './downloadModal';
+import { useModal } from '@/context/modalContext';
 const GrowBusiness = ({ className = '', data }) => {
+  const { handleModal } = useModal();
+
   const { title, description, button_text, button_url, image, custom_class } =
     data || {};
 
@@ -18,9 +23,12 @@ const GrowBusiness = ({ className = '', data }) => {
               <h2>{title}</h2>
               <p>{description}</p>
               <MagneticButton>
-                <Link
-                  href='#'
+                <button
+                  type='button'
                   className='btn btn-primary button--wayra download'
+                  data-bs-toggle='modal'
+                  data-bs-target={button_url}
+                  onClick={handleModal}
                 >
                   <svg
                     width='20'
@@ -35,7 +43,7 @@ const GrowBusiness = ({ className = '', data }) => {
                     />
                   </svg>
                   {button_text}
-                </Link>
+                </button>
               </MagneticButton>
             </div>
           </div>
@@ -53,6 +61,7 @@ const GrowBusiness = ({ className = '', data }) => {
           </div>
         </div>
       </div>
+      <DownloadModal downloadFor='ebook' modalID={button_url} />
     </section>
   );
 };
