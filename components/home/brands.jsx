@@ -23,7 +23,7 @@ const Brands = async ({ data }) => {
       <BrandSwiper brands={items} />
       <div className='text-center' data-aos='fade-up' data-aos-duration='600'>
         <MagneticButton>
-          <Link href='#' className='btn btn-stacked button--wayra'>
+          <Link href={view_more_url} className='btn btn-stacked button--wayra'>
             {view_more_text}
           </Link>
         </MagneticButton>

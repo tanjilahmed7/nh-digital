@@ -2,8 +2,15 @@ import Link from 'next/link';
 import MagneticButton from '../magneticButton';
 
 const CaseSummary = ({ data }) => {
-  const { year, industry, team_involvement, services_we_proided, description } =
-    data || {};
+  const {
+    year,
+    industry,
+    team_involvement,
+    services_we_proided,
+    description,
+    button_title,
+    button_url,
+  } = data || {};
   return (
     <div className='case-study-summary'>
       <div className='container'>
@@ -46,8 +53,11 @@ const CaseSummary = ({ data }) => {
 
             <div className='summary-item'>
               <MagneticButton>
-                <Link href='#' className='btn btn-stacked button--wayra'>
-                  Live link
+                <Link
+                  href={button_url}
+                  className='btn btn-stacked button--wayra'
+                >
+                  {button_title}
                   <svg
                     width='21'
                     height='20'

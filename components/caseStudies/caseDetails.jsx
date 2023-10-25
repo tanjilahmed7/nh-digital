@@ -84,19 +84,6 @@ const CaseDetails = ({ data, tags = {} }) => {
                     placeholder='blur'
                     blurDataURL={shimmerBlurData}
                   />
-                  {youtube_video_link && (
-                    <div className='col-12'>
-                      <div className='ratio ratio-16x9'>
-                        <iframe
-                          src={youtube_video_link}
-                          title='YouTube video player'
-                          frameBorder='0'
-                          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
 
@@ -119,6 +106,17 @@ const CaseDetails = ({ data, tags = {} }) => {
         )}
 
         <div className='section'>
+          {youtube_video_link && (
+            <div className='video-iframe'>
+              <iframe
+                src={youtube_video_link}
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
           {project.length > 0 ||
             (description_two && (
               <div className='row justify-content-center'>

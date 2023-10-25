@@ -20,7 +20,10 @@ const LifeAtNH = ({ data }) => {
           <div className='text-center'>
             {button_url && button_title && (
               <MagneticButton>
-                <Link href='#' className='btn btn-stacked button--wayra'>
+                <Link
+                  href={button_url}
+                  className='btn btn-stacked button--wayra'
+                >
                   {button_title}
                 </Link>
               </MagneticButton>

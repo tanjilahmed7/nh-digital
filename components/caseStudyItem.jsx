@@ -18,7 +18,7 @@ const CaseStudyItem = ({ href, img, title, tags }) => {
       <div className='case_studies_content'>
         <Link href={href}>{title}</Link>
         <ul className='tag'>
-          {tags.map((tag, index) => (
+          {tags.slice(0, 3).map((tag, index) => (
             <li key={index}>{tag.name}</li>
           ))}
         </ul>

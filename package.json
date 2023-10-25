@@ -21,6 +21,7 @@
 		"next": "^13.5.4",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-loading-skeleton": "^3.3.1",
 		"react-modal-video": "^2.0.1",
 		"server-only": "^0.0.1",
 		"swiper": "^10.3.0",

@@ -17,10 +17,6 @@
   }
 
   .stragegy-item {
-    padding-bottom: 60px;
-    @media (max-width: 767.98px) {
-      padding-bottom: 40px;
-    }
     .counter {
       h3 {
         font-weight: 500;
@@ -38,7 +34,7 @@
         margin-bottom: 0;
       }
       &::after {
-        content: "";
+        content: '';
         display: block;
         width: 40px;
         height: 2px;

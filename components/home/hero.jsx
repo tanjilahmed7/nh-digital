@@ -16,6 +16,7 @@ const HeroHome = ({ data }) => {
     banner_video,
     description,
     highlights,
+    banner_video_id,
   } = data || {};
   const typedStrings = highlights.map((highlight) => highlight.title);
 
@@ -44,7 +45,10 @@ const HeroHome = ({ data }) => {
             </div>
           </div>
           <div className='col-lg-6'>
-            <HeroMedia videoId='L61p2uyiMSo' video={banner_video} />
+            {banner_video_id && (
+              <HeroMedia videoId={banner_video_id} video={banner_video} />
+            )}
+
             {/* youtube video id need to be passed as a prop */}
           </div>
         </div>

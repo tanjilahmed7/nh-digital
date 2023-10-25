@@ -13,18 +13,20 @@ const IncludedServices = ({ data }) => {
           <p>{description}</p>
         </div>
         <IncludedServicesTab services={services} />
-        <div className='text-center'>
-          <MagneticButton>
-            <Link
-              href={button_url}
-              className='btn btn-primary button--wayra'
-              data-aos='fade-up'
-              data-aos-duration='400'
-            >
-              {button_title}
-            </Link>
-          </MagneticButton>
-        </div>
+        {button_url && (
+          <div className='text-center'>
+            <MagneticButton>
+              <Link
+                href={button_url}
+                className='btn btn-primary button--wayra'
+                data-aos='fade-up'
+                data-aos-duration='400'
+              >
+                {button_title}
+              </Link>
+            </MagneticButton>
+          </div>
+        )}
       </div>
     </section>
   );

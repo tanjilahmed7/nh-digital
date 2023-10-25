@@ -33,8 +33,6 @@ const SocialShare = ({ tags }) => {
     window.open(shareFullUrl, '_blank', 'noopener,noreferrer');
   };
 
-  console.log(tags);
-
   return (
     <div className='row justify-content-center'>
       <div className='col-lg-8'>

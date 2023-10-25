@@ -20,7 +20,7 @@ const GreatAttention = ({ data }) => {
               {button_title && button_url && (
                 <MagneticButton className='d-none d-md-inline-block'>
                   <Link
-                    href='#'
+                    href={button_url}
                     className='btn btn-primary button--wayra'
                     data-aos='fade-up'
                     data-aos-duration='600'
@@ -37,7 +37,7 @@ const GreatAttention = ({ data }) => {
               <div className='text-center'>
                 <MagneticButton className='d-md-none'>
                   <Link
-                    href='#'
+                    href={button_url}
                     className='btn btn-primary button--wayra'
                     data-aos='fade-up'
                     data-aos-duration='600'

@@ -29,7 +29,7 @@ export const renderPosts = (postsToRender, index) => {
             <Link href={`/case-studies/${slug}`}>{title}</Link>
             <ul className='tag'>
               {categories &&
-                categories.map((category, index) => {
+                categories.slice(0, 3).map((category, index) => {
                   const { name, slug } = category;
                   return <li key={index}>{name}</li>;
                 })}

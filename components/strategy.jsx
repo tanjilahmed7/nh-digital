@@ -5,7 +5,8 @@ import MagneticButton from './magneticButton';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
 const Strategy = ({ data }) => {
-  const { title, count_items, image, image_mobile } = data;
+  const { title, count_items, image, image_mobile, button_title, button_url } =
+    data;
   return (
     <section className='strategy section pb-0'>
       <div className='container'>
@@ -37,11 +38,13 @@ const Strategy = ({ data }) => {
           </div>
         </div>
         <div className='text-center' data-aos='fade-up' data-aos-duration='600'>
-          <MagneticButton>
-            <Link href='/about-us' className='btn btn-stacked button--wayra'>
-              Know the team
-            </Link>
-          </MagneticButton>
+          {button_url && (
+            <MagneticButton>
+              <Link href={button_url} className='btn btn-stacked button--wayra'>
+                {button_title}
+              </Link>
+            </MagneticButton>
+          )}
         </div>
       </div>
       <Image

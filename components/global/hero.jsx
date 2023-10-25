@@ -18,7 +18,8 @@ const Hero = ({ data, children, parent = {} }) => {
     <>
       <PageHero>
         <PageHeader breadcrumbs={breadcrumbs}>
-          {pagetitle && <h1>{pagetitle}</h1>}
+          {pagetitle ? <h1>{pagetitle}</h1> : <h1>{title}</h1>}
+
           {subtitle && <p>{subtitle}</p>}
           {children}
         </PageHeader>

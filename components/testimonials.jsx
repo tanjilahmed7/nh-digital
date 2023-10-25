@@ -7,8 +7,6 @@ const Testimonials = ({ className = '', data }) => {
   const { title, button_text, button_url, items, custom_class } = data || {};
   const classes = classNames(className, custom_class);
 
-  console.log(button_url);
-
   return (
     <section className={`testimonials section ${classes}`}>
       <div className='container'>

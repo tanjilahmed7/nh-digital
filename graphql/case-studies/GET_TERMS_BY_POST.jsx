@@ -50,7 +50,6 @@ const QUERY = gql`
 `;
 
 export async function fetchTermsByPost({ variables } = {}) {
-  console.log('fetchTermsByPost', variables);
   return getFetch(QUERY, {
     variables,
   });

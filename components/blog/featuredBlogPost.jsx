@@ -5,7 +5,6 @@ import { getPost } from '@/graphql/blogs/GET_POST';
 import { shimmerBlurData } from '@/constants/shimmerBlurData';
 
 const FeaturedBlogPost = async ({ data }) => {
-  console.log(data);
   const id = parseInt(data?.post);
 
   const { post } = (await getPost(id)) || {};
